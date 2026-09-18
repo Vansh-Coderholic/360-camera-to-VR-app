@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #05080c;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ======================================
+   COMMON
+====================================== */
+
+.hidden {
+    display: none !important;
+}
+
+/* ======================================
+   HOME SCREEN
+====================================== */
+
+#homeScreen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #12202d 0%,
+            #081018 45%,
+            #030609 100%
+        );
+}
+
+.home-card {
+    width: min(420px, 100%);
+    text-align: center;
+}
+
+.app-icon {
+    width: 74px;
+    height: 74px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #47d7ff;
+    border-radius: 22px;
+
+    color: #47d7ff;
+    font-size: 38px;
+
+    box-shadow:
+        0 0 30px rgba(71, 215, 255, 0.18);
+}
+
+.home-card h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #8f9ba6;
+    font-size: 14px;
+    margin-bottom: 36px;
+}
+
+.source-box {
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    border: 1px solid #243340;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.source-label {
+    color: #778793;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+}
+
+.source-status {
+    font-family: monospace;
+    font-size: 13px;
+    color: #66e5a8;
+}
+
+#startViewerButton {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #47d7ff;
+    color: #031017;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+#startViewerButton:active {
+    transform: scale(0.98);
+}
+
+.camera-note {
+    margin-top: 15px;
+
+    color: #65737e;
+    font-size: 11px;
+}
+
+/* ======================================
+   VIEWER SCREEN
+====================================== */
+
+#viewerScreen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: black;
+}
+
+#viewer {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* ======================================
+   HUD
+====================================== */
+
+#hud {
+    position: fixed;
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    color: white;
+    font-family: monospace;
+
+    text-shadow:
+        0 1px 4px black,
+        0 0 8px black;
+}
+
+.top {
+    position: absolute;
+
+    top: max(22px, env(safe-area-inset-top));
+    left: max(24px, env(safe-area-inset-left));
+    right: max(24px, env(safe-area-inset-right));
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+}
+
+#feedStatus {
+    color: #66e5a8;
+}
+
+.bottom {
+    position: absolute;
+
+    bottom: max(24px, env(safe-area-inset-bottom));
+    left: max(24px, env(safe-area-inset-left));
+    right: max(24px, env(safe-area-inset-right));
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 11px;
+}
+
+#crosshair {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 28px;
+    opacity: 0.75;
+}
+
+/* ======================================
+   VIEWER CONTROLS
+====================================== */
+
+#viewerControls {
+    position: fixed;
+
+    left: 50%;
+    bottom: 62px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#viewerControls button {
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+
+    background: rgba(5, 10, 15, 0.78);
+    color: white;
+
+    font-size: 12px;
+
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+}
+
+#viewerControls button:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#backButton {
+    width: 44px;
+    padding: 0 !important;
+
+    font-size: 20px !important;
+}
+
+/* ======================================
+   PHONE VR MODE
+====================================== */
+
+body.phone-vr {
+    background: black;
+}
+
+body.phone-vr #hud {
+    display: none;
+}
+
+body.phone-vr #viewerControls {
+    display: none;
+}
+
+body.phone-vr #viewer {
+    inset: 0;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 700px) {
+
+    .home-card h1 {
+        font-size: 27px;
+    }
+
+    .top {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+
+        font-size: 10px;
+    }
+
+    .bottom {
+        bottom: 14px;
+        left: 16px;
+        right: 16px;
+
+        font-size: 9px;
+    }
+
+    #viewerControls {
+        bottom: 45px;
+        gap: 6px;
+    }
+
+    #viewerControls button {
+        min-height: 40px;
+
+        padding: 0 11px;
+
+        font-size: 10px;
+    }
+
+}
+
+/* ======================================
+   LANDSCAPE PHONE
+====================================== */
+
+@media (orientation: landscape) and (max-height: 600px) {
+
+    #viewerControls {
+        bottom: 28px;
+    }
+
+    .bottom {
+        bottom: 10px;
+    }
+
+}

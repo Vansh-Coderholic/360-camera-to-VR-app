@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>360 Camera VR</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- HOME SCREEN -->
+    <!-- ============================= -->
+
+    <div id="homeScreen">
+
+        <div class="home-card">
+
+            <div class="app-icon">◉</div>
+
+            <h1>360 Camera VR</h1>
+
+            <p class="subtitle">
+                Immersive 360° camera viewer
+            </p>
+
+            <div class="source-box">
+
+                <span class="source-label">
+                    VIDEO SOURCE
+                </span>
+
+                <span class="source-status">
+                    ● DEMO 360 VIDEO
+                </span>
+
+            </div>
+
+            <button id="startViewerButton">
+                START VIEWER
+            </button>
+
+            <p class="camera-note">
+                Live camera support coming next
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- VIEWER SCREEN -->
+    <!-- ============================= -->
+
+    <div id="viewerScreen" class="hidden">
+
+        <!-- THREE.JS VIEWER -->
+        <div id="viewer"></div>
+
+
+        <!-- HUD -->
+        <div id="hud">
+
+            <div class="top">
+
+                <span id="feedStatus">
+                    ● DEMO FEED
+                </span>
+
+                <span>
+                    360° VIEW
+                </span>
+
+            </div>
+
+
+            <div id="crosshair">
+                +
+            </div>
+
+
+            <div class="bottom">
+
+                <span id="heading">
+                    HEADING: 000°
+                </span>
+
+                <span id="gyro-status">
+                    GYRO: OFF
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIEWER CONTROLS -->
+        <div id="viewerControls">
+
+            <button id="backButton">
+                ←
+            </button>
+
+            <button id="gyroButton">
+                📱 GYRO
+            </button>
+
+            <button id="phoneVrButton">
+                🥽 ENTER VR
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- APPLICATION -->
+    <!-- ============================= -->
+
+    <script
+        type="module"
+        src="main.js">
+    </script>
+
+</body>
+
+</html>
