@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>360 VR Navigation</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- 360 VIEWER -->
+    <div id="viewer"></div>
+
+
+    <!-- HUD -->
+    <div id="hud">
+
+        <div class="top">
+            <span>● TEST FEED</span>
+            <span>LINK 100%</span>
+        </div>
+
+        <div id="crosshair">
+            +
+        </div>
+
+        <div class="bottom">
+
+            <span id="heading">
+                HEADING: 000°
+            </span>
+
+            <span id="gyro-status">
+                GYRO: OFF
+            </span>
+
+            <span>
+                BAT: 100%
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHONE CONTROLS -->
+
+    <div id="phoneControls">
+
+        <button id="phoneVrButton">
+            🥽 PHONE VR
+        </button>
+
+        <button id="gyroButton">
+            📱 ENABLE GYRO
+        </button>
+
+    </div>
+
+
+    <!-- MAIN APPLICATION -->
+    <script
+        type="module"
+        src="main.js">
+    </script>
+
+</body>
+
+</html>

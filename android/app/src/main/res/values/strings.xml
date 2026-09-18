@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">360 camera VR</string>
+    <string name="title_activity_main">360 camera VR</string>
+    <string name="package_name">com.tmrt.camera360vr</string>
+    <string name="custom_url_scheme">com.tmrt.camera360vr</string>
+</resources>
